@@ -1,4 +1,5 @@
 # Rails.application.routes.draw do
+  # devise_for :users
 #   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 #   root "articles#index"
@@ -7,12 +8,14 @@
 # end
 
 # Rails.application.routes.draw do
+  # devise_for :users
 #   root "articles#index"
 
 #   resources :articles
 # end
 
 Rails.application.routes.draw do
+  devise_for :users
   root "articles#index"
 
   resources :articles do
