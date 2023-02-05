@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem "devise" 
+gem 'bootstrap', '~> 4.3.1'
+gem 'excon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
