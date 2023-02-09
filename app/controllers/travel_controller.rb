@@ -8,10 +8,9 @@ class TravelController < ApplicationController
       flash[:alert] = 'city not found'
       return render action: :index
     end
-    @city = cities.first
-    puts("yash nihalani")
-    puts(cities.first);
-    
+    puts("yash nihalani");
+    @city = cities
+    # puts(@city['term'])
   end
 
   def request_api(url)
@@ -24,7 +23,6 @@ class TravelController < ApplicationController
     )
     puts(url)    
     puts(response.status)
-
     return nil if response.status != 200
     JSON.parse(response.body)
   end

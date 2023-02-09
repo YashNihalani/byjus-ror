@@ -1,9 +1,33 @@
-<!-- app/views/travel/search.html.erb -->
 <div class="container">
   <div class="row mt-5">
     <div class="col-lg-6">
-      <h4>Hotel info</h4>
-       
-    </div>
+      <h4>City info</h4>
+      <dl>
+      <dt>City Name</dt>
+      <dd><%= @city['term']%></dd>
+      <dt>City Details</dt>
+      <% @city['suggestions'].each do |suggestion|%>
+        <h3> <%= suggestion['group']%> </h3>
+        <% entities = suggestion['entities']%>
+        <%if entities.count %>
+          <% all_keys = entities.first.keys - ['caption','redirectPage', 'searchDetail'] %>
+          <table>
+            <tr>
+              <%all_keys.each do |key|%>
+                <th> <%=key%> </th>
+              <%end%>
+            <tr>
+
+            <%entities.each do |entity| %>
+              <tr>
+                <%all_keys.each do |key|%>
+                  <td> <%=entity[key]%> </td>
+                <%end%>
+              </tr>
+            <%end%>
+          </table>
+        <%end%>
+      <%end%>
+    </dl>
   </div>
 </div>
